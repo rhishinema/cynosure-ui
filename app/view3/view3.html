@@ -1,106 +1,29 @@
-<div class="col-lg-12 margin-t-3 blurBg">
+<div class="col-lg-12 margin-t-3 blurBg" ng-init="getAllProducts()">
+	<marquee class="cynosure-marquee">For more details visit the online merchandise site & order your favourite product today!!!</marquee>
 <div class="col-lg-12 margin-t-3 ">
-	<div class="col-lg-4">
-		<a class="prod-link">
+	<div class="col-lg-4" ng-repeat="product in products.products track by $index">
+		<a class="prod-link" ng-click="productId=product.productId;getproductDetails()">
 			<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod1.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
+				<img class="prodImg image" src="/img/products/prod{{$index+1}}.jpg"></img>
+				<div class="overlay">
+					<div class="text text1">
+					<span class="keyText">Name:</span><span class="valueText"> {{product.productName}}</span>
 					</div>
-					<div class="white text text2">
-					Rs 1000/-
+					<div class="text text2">
+					<span class="keyText">Description:</span> <span class="valueText">{{product.productDetail}}</span>
 					</div>
-					<div class="white text text3">
-					Availability: Instock
+					<div class="text text3">
+					<span class="keyText">Price:</span> <span class="valueText">Rs {{product.price}}/-</span>
+					</div>
+					<div class="text text4">
+					<span class="keyText">Store Name:</span> <span class="valueText">{{product.storeName}}</span>
+
+					</div>	
+					<div class="text text5">
+					<span class="keyText">Stock:</span> <span class="valueText">{{product.stock}}</span>
 					</div>	
 				</div>
 		</div>
 		</a>
 	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod2.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
-					</div>
-					<div class="white text text2">
-					Rs 1000/-
-					</div>
-					<div class="white text text3">
-					Availability: Instock
-					</div>	
-				</div>
-		</div>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod3.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
-					</div>
-					<div class="white text text2">
-					Rs 1000/-
-					</div>
-					<div class="white text text3">
-					Availability: Instock
-					</div>	
-				</div>
-		</div>
-	</div>
-</div>
-<div class="col-lg-12 margin-t-3 ">
-	<div class="col-lg-4">
-		<a class="prod-link">
-			<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod1.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
-					</div>
-					<div class="white text text2">
-					Rs 1000/-
-					</div>
-					<div class="white text text3">
-					Availability: Instock
-					</div>	
-				</div>
-		</div>
-		</a>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod2.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
-					</div>
-					<div class="white text text2">
-					Rs 1000/-
-					</div>
-					<div class="white text text3">
-					Availability: Instock
-					</div>	
-				</div>
-		</div>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/products/prod3.jpg"></img>
-				 <div class="overlay">
-					<div class="white text text1">
-					Coffee Mug with autograph
-					</div>
-					<div class="white text text2">
-					Rs 1000/-
-					</div>
-					<div class="white text text3">
-					Availability: Instock
-					</div>	
-				</div>
-		</div>
-	</div>
-</div>
 </div>

@@ -10,9 +10,10 @@
     <span class="panel-title">News Letter</span>
   </div>
   <div class="panel-body">
+     <div class="subscriptionMsg" ng-class="{'red':!subscription,'green':subscription}">{{subscriptionMsg}}</div>
      <div class="input-group">
-    <input type="text" class="form-control" placeholder="Recipient's email" aria-describedby="basic-addon2">
-    <span class="input-group-addon" id="basic-addon2">Sign Up</span>
+    <input type="email" class="form-control" placeholder="Recipient's email" ng-model="subscriptionMail" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="basic-addon2" ng-click="subscribe()">Sign Up</span>
   </div>
   </div>
 </div>

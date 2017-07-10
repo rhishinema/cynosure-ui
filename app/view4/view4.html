@@ -1,52 +1,26 @@
 <div class="col-lg-12 margin-t-3 blurBg">
-	<div class="col-lg-4">
+	<div class="col-lg-6 movieContainer" ng-repeat="movie in movies.movies track by $index">
 		<a class="prod-link">
 			<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/movies/upcoming1.jpg"></img>
+				<img class="prodImg image" src="img/movies/upcoming{{$index+1}}.jpg"></img>
 				 <div class="overlay">
 					<div class="text text1">
-					Title: Blue Rose
+					<span class="keyText">Title:</span><span class="valueText"> {{movie.movieName}}</span>
 					</div>
 					<div class="text text2">
-					Casting:
+					<span class="keyText">Synopsis:</span> <span class="valueText">{{movie.movieDesc}}</span>
 					</div>
 					<div class="text text3">
-					Release date
+					<span class="keyText">Casting:</span> <span class="valueText">{{movie.castingDetails}}</span>
+					</div>
+					<div class="text text4">
+					<span class="keyText">Release date:</span> <span class="valueText">{{movie.releaseDateStr}}</span>
+					</div>	
+					<div class="text text5">
+					<span class="keyText">Genre:</span> <span class="valueText">{{movie.genre}}</span>
 					</div>	
 				</div>
-		</div>
+			</div>
 		</a>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/movies/upcoming2.jpg"></img>
-				  <div class="overlay">
-					<div class="text text1">
-					Title: Cappuccino
-					</div>
-					<div class="text text2">
-					Casting:
-					</div>
-					<div class="text text3">
-					Release date
-					</div>	
-				</div>
-		</div>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-lg-8 prod-border container">
-				<img class="prodImg image" src="/img/movies/upcoming3.jpg"></img>
-				  <div class="overlay">
-					<div class="text text1">
-					Title: Echo
-					</div>
-					<div class="text text2">
-					Casting:
-					</div>
-					<div class="text text3">
-					Release date
-					</div>	
-				</div>
-		</div>
 	</div>
 </div>

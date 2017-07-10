@@ -104,6 +104,10 @@ span#basic-addon2 {
     background-color: #b79720;
     font-variant: small-caps;
     color: white;
+    cursor: pointer;
+}
+span#basic-addon2:hover {
+    opacity: .8;
 }
 .white{
   color:white;
@@ -118,7 +122,9 @@ span#basic-addon2 {
 .margin-t-3{
   margin-top:3%;
 }
-
+.margin-t-2{
+  margin-top:2%;
+}
 .container {
   position: relative;
   width: 50%;
@@ -147,11 +153,12 @@ span#basic-addon2 {
 .container:hover .overlay {
   width: 100%;
 }
-
+.cynosure-marquee{
+  color:white;
+  font-size: 15px;
+}
 .text {
   white-space: nowrap; 
-  color: black;
-  font-weight:bold;
   font-size: 15px;
   position: absolute;
   overflow: hidden;
@@ -159,14 +166,29 @@ span#basic-addon2 {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+.keyText{
+  color: #5f0707;
+  font-weight:bold;
+  font-style: italic;
+}
+.valueText{
+  font-weight:bold;
+  color: black;
+}
 .text1{
-  top: 30%;
+  top: 20%;
 }
 .text2{
-  top: 40%;
+  top: 30%;
 }
 .text3{
+  top: 40%;
+}
+.text4{
   top: 50%;
+}
+.text5{
+  top: 60%;
 }
 .blurBg{
   background-color: rgba(0, 0, 0, 0.701961);
@@ -192,4 +214,22 @@ img.prodImg.image {
 .homeDescName{
   
     font-size: -webkit-xxx-large;
+}
+.red{
+  color:red;
+}
+.green{
+  color:green;
+}
+.subscriptionMsg{
+  margin-bottom:2%;
+}
+.movieContainer{
+  margin-top:3%;
+}
+.fb-Bg{
+  background-color: white;
+}
+.liveContainer{
+  margin-left: 5% !important;
 }

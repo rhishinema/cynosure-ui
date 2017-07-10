@@ -9,13 +9,26 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope',function($scope) {
-//	$scope.getDetails = function(){
-	$scope.check = 'true';
-		$scope.shortLinkDetails = {"shortLinkId":"123",
-"owner": "Neha jayadeep",
-"createdDate": "04-07-2016",
-"expiry":"04-07-2017"
-};
-//	};
+.controller('View1Ctrl', ['$scope','$http','$q',function($scope,$http,$q) {
+	$scope.subscriptionMsg = undefined;
+	$scope.subscribe = function(){
+		if(!$scope.subscriptionMail){
+			$scope.subscriptionMsg = 'Please enter a valid email address';
+			$scope.subscription = false;
+		}else{
+ $http({
+        url: 'http://52.170.201.27:8080/v1/subscribers/add?',
+        method: "POST",
+        data: { 'email' : $scope.subscriptionMail }
+    })
+    .then(function(response) {
+            $scope.subscription = true;
+            $scope.subscriptionMsg = 'Successfully subscribed to newletter';
+    }, 
+    function(response) { // optional
+            $scope.subscription = false;
+            $scope.subscriptionMsg = 'Error occurred. please try again';
+    });
+}
+	};
 }]);
