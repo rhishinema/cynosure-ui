@@ -9,19 +9,19 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', ['$scope',function($scope) {
+.controller('View2Ctrl', ['$scope','$http',function($scope, $http) {
  $scope.myInterval = 2000;
   $scope.noWrapSlides = false;
   $scope.active = 0;
   var slides = $scope.slides = [];
   var currIndex = 0;
 
-  $scope.addSlide = function() {
+  $scope.addSlide = function(url) {
     var newWidth = 600 + slides.length + 1;
     var index = currIndex++;
-    console.log(index);
+    //console.log(index);
     slides.push({
-      image: 'img/carousel'+index+'.jpg',
+      image: url,
       id: index
     });
   };
@@ -30,10 +30,20 @@ angular.module('myApp.view2', ['ngRoute'])
     var indexes = generateIndexesArray();
     assignNewIndexesToSlides(indexes);
   };
-
-  for (var i = 0; i < 4; i++) {
-    $scope.addSlide();
-  }
+    $scope.getGalleryImages = function(){
+   $http.get("http://52.170.201.27:8080/v1/gallery")
+    .then(function(response) {
+      $scope.galleryImgs =   response.data; 
+       for (var i = 0; i < $scope.galleryImgs.length; i++) {
+    $scope.addSlide($scope.galleryImgs[i]);
+  }   
+    }, 
+    function(response) { // optional
+        //TODO:error handling   
+    });
+}
+$scope.getGalleryImages();
+ 
 
   // Randomize logic below
 
