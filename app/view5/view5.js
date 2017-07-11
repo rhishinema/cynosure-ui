@@ -34,7 +34,7 @@ angular.module('myApp.view5', ['ngRoute'])
                 var colorscheme = attrs.colorscheme || 'light';
                 var width = attrs.width || '100%';
                 elem.html(createHTML(href, numposts, colorscheme, width));
-                FB.XFBML.parse(elem[0]);
+                //FB.XFBML.parse(elem[0]);
             });
         }
     };

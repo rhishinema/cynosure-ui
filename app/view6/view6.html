@@ -1,0 +1,28 @@
+<div class="col-lg-12 blurBg">
+	<div class="col-lg-6 margin-t-3" ng-repeat="event in events track by $index">
+		<a class="prod-link">
+			<div class="col-lg-8 event-border container">
+				<img class="prodImg image" src="{{event}}"></img>
+				 <div class="margin-t-2">
+					<div class="">
+					<span class="keyText">Event Title:</span><span class="valueText"> {{movie.movieName}}</span>
+					</div>
+					<div class="">
+					<span class="keyText">Event Date:</span> <span class="valueText">{{movie.movieDesc}}</span>
+					</div>
+					<div class="">
+					<span class="keyText">Event Venue:</span> <span class="valueText">{{movie.castingDetails}}</span>
+					</div>
+					<div class="">
+					<span class="keyText">Fee:</span> <span class="valueText">{{movie.releaseDateStr}}</span>
+					</div>		
+				</div>
+				<div class="event-overlay">
+					<div class="text text3">
+					<span class="input-group-addon" id="basic-addon2" ng-click="subscribe()">Register</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

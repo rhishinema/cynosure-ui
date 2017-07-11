@@ -115,9 +115,12 @@ span#basic-addon2:hover {
 .primary{
   color:#b79720;
 }
-.prod-border{
+.prod-border, .event-border{
   border: #b79720 solid 1px;
   padding:2%;
+}
+.event-border{
+  background-color: #b79720;
 }
 .margin-t-3{
   margin-top:3%;
@@ -136,12 +139,11 @@ span#basic-addon2:hover {
   height: auto;
 }
 
-.overlay {
+.overlay, .event-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #b79720;
   overflow: hidden;
   width: 0;
   height: 100%;
@@ -149,8 +151,13 @@ span#basic-addon2:hover {
   color:black;
   transition: .5s ease;
 }
-
-.container:hover .overlay {
+.overlay{
+  background-color: #b79720;
+}
+.event-overlay {
+background-color: #696868;
+}
+.container:hover .overlay, .container:hover .event-overlay {
   width: 100%;
 }
 .cynosure-marquee{
