@@ -57,7 +57,7 @@ nav.navbar.navbar-cynosure {
     color:white!important;
 }
 .carousel-img{
-  width:30%;
+  width:80%;
 }
 .carousel-wrapper{
   margin-top:5%;
@@ -232,4 +232,71 @@ img.prodImg.image {
 }
 .liveContainer{
   margin-left: 5% !important;
+}
+@media only screen and (max-width: 500px) {
+    #panel-cynosure-default{
+      width:100%;
+    }
+    .navbar-cynosure-lg,.navbar-cynosure-desk{
+      display:none;
+    }
+    
+body{
+    background-image: url('/img/homeMainphone.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.homeDesc {
+        color: white;
+    font-size: x-large;
+    margin-left: 2%;
+    margin-top: 15%;
+    font-family: cursive;
+    height: 500px;
+    text-align: center;
+
+}
+.homeDescName {
+    font-size: xx-large;
+}
+.homeTagDesk{
+  display:none;
+}
+.homeTagMob{
+  margin-top:10%;
+}
+nav.navbar.navbar-inverse.navbar-static-top.navbar-cynosure-mob {
+    background-color: #696868;
+    border-color: #696868;
+}
+.navbar-cynosure-mob .navbar-toggle{
+    border-color: #696868 !important;
+    float:left !important;
+}
+.container {
+    width: 90%;
+}
+.cynosure-dropdown-menu>li>a {
+    background-color: #696868;
+}
+.selected {
+    color: white;
+    margin-left: 20%;
+    font-variant: small-caps;
+    font-weight: bold;
+    position: relative;
+    float: left;
+    margin-top: 5%;
+}
+}
+
+@media only screen and (min-width: 500px) {
+    .navbar-cynosure-mob {
+   display:none;
+}
+.homeTagMob{
+  display:none;
+}
+
 }

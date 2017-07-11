@@ -24,9 +24,38 @@
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<nav class="navbar navbar-inverse navbar-static-top navbar-cynosure-mob" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><span class="selected">{{selected}}</span>
+        </div>
 
-<nav class="navbar navbar-cynosure">
-  <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                     <li><a ng-class="{'active':home}" href="#" ng-click="home=true;live=false;events=false;products=false;gallery=false;movies=false;selected=''">Home</a></li>
+        <li><a ng-class="{'active':live}" href="#!/view5" ng-click="home=false;live=true;events=false;products=false;gallery=false;movies=false;selected='Live'">Live</a></li>
+         <li><a ng-class="{'active':events}" href="#" ng-click="home=false;live=false;events=true;products=false;gallery=false;movies=false;selected='Events'">Events</a></li>
+         <li><a ng-class="{'active':products}" href="#!/view3" ng-click="home=false;live=false;events=false;products=true;gallery=false;movies=false;selected='Products'">Products</a></li>
+         <li><a ng-class="{'active':gallery}" href="#!/view2" ng-click="home=false;live=false;events=false;products=false;gallery=true;movies=false;selected='Gallery'">Gallery</a></li>
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" ng-class="{'active':movies}" role="button" aria-haspopup="true" aria-expanded="false" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true">Movies <span class="caret"></span></a>
+          <ul class="dropdown-menu cynosure-dropdown-menu">
+            <li><a href="#!/view4/latest" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='Latest Movies'">Latest</a></li>
+            <li><a href="#!/view4/all" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='All Movies'">All</a></li>
+          </ul>
+        </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-cynosure navbar-cynosure-desk">
+  <div class="container-fluid navbar-cynosure-lg col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <!--
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -80,6 +109,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 
 
     <div ng-view></div>

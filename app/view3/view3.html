@@ -1,7 +1,7 @@
 <div class="col-lg-12 margin-t-3 blurBg" ng-init="getAllProducts()">
 	<marquee class="cynosure-marquee">For more details visit the online merchandise site & order your favourite product today!!!</marquee>
 <div class="col-lg-12 margin-t-3 ">
-	<div class="col-lg-4" ng-repeat="product in products.products track by $index">
+	<div class="col-lg-4 margin-t-3" ng-repeat="product in products.products track by $index">
 		<a class="prod-link" ng-click="productId=product.productId;getproductDetails()">
 			<div class="col-lg-8 prod-border container">
 				<img class="prodImg image" src="/img/products/prod{{$index+1}}.jpg"></img>
