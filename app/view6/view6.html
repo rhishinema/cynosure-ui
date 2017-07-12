@@ -19,10 +19,63 @@
 				</div>
 				<div class="event-overlay">
 					<div class="text text3">
-					<span class="input-group-addon" id="basic-addon2" ng-click="subscribe()">Register</span>
+					<!-- <span class="input-group-addon" id="basic-addon2" ng-click="subscribe()">Register</span> -->
+					<button type="button" class="btn btn-lg registerBtn" data-toggle="modal" data-target="#registrationModal">Register</button>
 					</div>
 				</div>
 			</div>
 		</a>
 	</div>
 </div>
+<!-- Modal -->
+  <div class="modal fade" id="registrationModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header modal-header-cynosure">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Registration</h4>
+        </div>
+        <div class="modal-body">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <span>Name:</span>
+         </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <input type="text" class="form-control" placeholder="name" ng-model="registrationName" aria-describedby="basic-addon2">
+         </div>
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <span>Email:</span>
+         </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <input type="email" class="form-control" placeholder="email" ng-model="registrationEmail" aria-describedby="basic-addon2">
+         </div>
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <span>Contact:</span>
+         </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <input type="text" class="form-control" placeholder="contact" ng-model="registrationContact" aria-describedby="basic-addon2">
+         </div>
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <span>Number of tickets:</span>
+         </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <input type="number" class="form-control" placeholder="number of tickets" ng-model="registrationTickets" aria-describedby="basic-addon2">
+         </div>
+     </div>
+		</div>
+        <div class="modal-footer modal-footer-cynosure">
+          <!-- <button type="button" class="btn btn-default margin-t-3" data-dismiss="modal">Submit</button> -->
+          <button type="button" class="btn btn-default registerBtn margin-t-3 margin-r-5">Register</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

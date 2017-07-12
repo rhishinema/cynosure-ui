@@ -77,7 +77,10 @@ nav,#panel-cynosure-default {
   
   background: #333;
 }
-
+.modal-header.modal-header-cynosure {
+    background-color: #696868;
+    color: white;
+}
 .cynosure-newsletter-btn {
     bottom: 0;
     position: fixed;
@@ -96,15 +99,18 @@ nav,#panel-cynosure-default {
     font-variant: small-caps;
 
 }
+.margin-r-5{
+  margin-right:5%;
+}
 div#panel-cynosure-default {
     border-color: black;
     border-radius: 10px;
 }
-span#basic-addon2 {
-    background-color: #b79720;
-    font-variant: small-caps;
-    color: white;
-    cursor: pointer;
+span#basic-addon2, .registerBtn {
+    background-color: #b79720 !important;
+    font-variant: small-caps !important;
+    color: white !important;
+    cursor: pointer !important;
 }
 span#basic-addon2:hover {
     opacity: .8;
@@ -239,6 +245,9 @@ img.prodImg.image {
 }
 .liveContainer{
   margin-left: 5% !important;
+}
+.modal-footer.modal-footer-cynosure {
+    border-top: 0;
 }
 @media only screen and (max-width: 500px) {
     #panel-cynosure-default{
