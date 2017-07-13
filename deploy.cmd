@@ -15,12 +15,6 @@ IF %ERRORLEVEL% NEQ 0 (
   goto error
 )
 
-IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
-  pushd "%DEPLOYMENT_TARGET%\
-  call ..\node_modules\.bin\bower install
-  IF !ERRORLEVEL! NEQ 0 goto error
-  popd
-)
 :: Setup
 :: -----
 
@@ -107,6 +101,13 @@ call :SelectNodeVersion
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install --production
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
+
+IF EXIST "%DEPLOYMENT_TARGET%\bower.json" (
+  pushd "%DEPLOYMENT_TARGET%
+  call ./node_modules/.bin/bower install
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
