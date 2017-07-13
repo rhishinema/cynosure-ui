@@ -1,26 +1,32 @@
 <div class="col-lg-12 blurBg">
 	<div class="col-lg-6 margin-t-3" ng-repeat="event in events track by $index">
 		<a class="prod-link">
-			<div class="col-lg-8 event-border container">
-				<img class="prodImg image" src="{{event}}"></img>
+			<div class="col-lg-8 col-lg-push-2 event-border container">
+				<img class="prodImg image" src="{{event.eventUrl}}"></img>
 				 <div class="margin-t-2">
 					<div class="">
-					<span class="keyText">Event Title:</span><span class="valueText"> {{movie.movieName}}</span>
+					<span class="keyText">Event Title:</span><span class="valueText"> {{event.eventName}}</span>
 					</div>
 					<div class="">
-					<span class="keyText">Event Date:</span> <span class="valueText">{{movie.movieDesc}}</span>
+					<span class="keyText">Event Date:</span> <span class="valueText">{{event.eventDateFormat}}</span>
 					</div>
 					<div class="">
-					<span class="keyText">Event Venue:</span> <span class="valueText">{{movie.castingDetails}}</span>
+					<span class="keyText">Event Venue:</span> <span class="valueText">{{event.eventVenue}}</span>
 					</div>
 					<div class="">
-					<span class="keyText">Fee:</span> <span class="valueText">{{movie.releaseDateStr}}</span>
-					</div>		
+					<span class="keyText">Fee:</span> <span class="valueText">Rs {{event.entryFee}}/-</span>
+					</div>
+           <div class="">
+          <span class="keyText">Registration start date:</span> <span class="valueText">{{event.registrationStartDateFormat}}</span>
+          </div>
+          <div class="">
+          <span class="keyText">Registration end date:</span> <span class="valueText">{{event.registrationEndDateFormat}}</span>
+          </div>		
 				</div>
 				<div class="event-overlay">
 					<div class="text text3">
 					<!-- <span class="input-group-addon" id="basic-addon2" ng-click="subscribe()">Register</span> -->
-					<button type="button" class="btn btn-lg registerBtn" data-toggle="modal" data-target="#registrationModal">Register</button>
+					<button type="button" class="btn btn-lg registerBtn" data-toggle="modal" data-target="#registrationModal" ng-click="setIds(event.eventId,$index)">Register</button>
 					</div>
 				</div>
 			</div>
@@ -37,13 +43,17 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Registration</h4>
         </div>
+        <div>
         <div class="modal-body">
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 green margin-t-2" ng-show="event.registered">
+            You have successfully registered for the event!
+          </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <span>Name:</span>
          </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <input type="text" class="form-control" placeholder="name" ng-model="registrationName" aria-describedby="basic-addon2">
+          <input type="text" ng-disabled="event.registered" class="form-control" placeholder="name" ng-model="registrationName" aria-describedby="basic-addon2">
          </div>
      </div>
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
@@ -51,7 +61,7 @@
           <span>Email:</span>
          </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <input type="email" class="form-control" placeholder="email" ng-model="registrationEmail" aria-describedby="basic-addon2">
+          <input type="email"  ng-disabled="event.registered"class="form-control" placeholder="email" ng-model="registrationEmail" aria-describedby="basic-addon2">
          </div>
      </div>
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
@@ -59,7 +69,7 @@
           <span>Contact:</span>
          </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <input type="text" class="form-control" placeholder="contact" ng-model="registrationContact" aria-describedby="basic-addon2">
+          <input type="text" ng-disabled="event.registered" class="form-control" placeholder="contact" ng-model="registrationContact" aria-describedby="basic-addon2">
          </div>
      </div>
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2">
@@ -67,14 +77,24 @@
           <span>Number of tickets:</span>
          </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <input type="number" class="form-control" placeholder="number of tickets" ng-model="registrationTickets" aria-describedby="basic-addon2">
+          <input type="number" ng-disabled="event.registered" class="form-control" placeholder="number of tickets" ng-model="registrationTickets" aria-describedby="basic-addon2">
+         </div>
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-t-2" ng-show="event.registered">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 red">
+          <span>Amount to be paid:</span>
+         </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+         <span>{{amount}}</span>
          </div>
      </div>
 		</div>
         <div class="modal-footer modal-footer-cynosure">
           <!-- <button type="button" class="btn btn-default margin-t-3" data-dismiss="modal">Submit</button> -->
-          <button type="button" class="btn btn-default registerBtn margin-t-3 margin-r-5">Register</button>
+          <button ng-show="!event.registered"type="button" class="btn btn-default registerBtn margin-t-3 margin-r-5" ng-click="registerEvent()">Register</button>
+          <button ng-show="event.registered" type="button" class="btn btn-default registerBtn margin-t-3 margin-r-5" data-dismiss="modal">OK</button>
         </div>
+      </div>
       </div>
       
     </div>

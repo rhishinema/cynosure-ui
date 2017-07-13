@@ -40,6 +40,10 @@ nav.navbar.navbar-cynosure {
 .cynosure-body{
   background-color: black;
 }
+a.fa {
+    padding-top: 8px !important;
+    padding-bottom: 8px!important;
+}
 .homeImg{
  /* position: fixed; */
     left: 0px; 
@@ -289,6 +293,10 @@ nav.navbar.navbar-inverse.navbar-static-top.navbar-cynosure-mob {
 .navbar-cynosure-mob .navbar-toggle{
     border-color: #696868 !important;
     float:left !important;
+}
+.social-icons-mob {
+    float: right;
+    margin-top: 2%;
 }
 .container {
     width: 90%;

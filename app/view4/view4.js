@@ -3,7 +3,7 @@
 angular.module('myApp.view4', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view4/:movieType', {
+  $routeProvider.when('/movies/:movieType', {
     templateUrl: 'view4/view4.html',
     controller: 'View4Ctrl'
   });
