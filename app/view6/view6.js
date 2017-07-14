@@ -10,6 +10,7 @@ angular.module('myApp.view6', ['ngRoute'])
 }])
 
 .controller('View6Ctrl', ['$scope','$http',function($scope,$http) {
+  $scope.register = {};
   $http.get("http://52.170.201.27:8080/v1/events")
     .then(function(response) {
       $scope.events =   response.data.events; 
@@ -20,16 +21,27 @@ angular.module('myApp.view6', ['ngRoute'])
     });
 
     $scope.registerEvent =function(){
-      $scope.events[$scope.eventIndex].registered=true;
-      $scope.amount = Number($scope.events[$scope.eventIndex].entryFee) * Number($scope.registrationTickets);
+     $scope.error = undefined;
+      $scope.amount = Number($scope.events[$scope.eventIndex].entryFee) * Number($scope.register.registrationTickets);
       console.log($scope.amount);
-      $http.get("http://52.170.201.27:8080/v1/events")
+      var jsonData = {}
+      jsonData.eventId = $scope.events[$scope.eventIndex].eventId;
+      jsonData.personEmail = $scope.register.registrationEmail;
+      jsonData.personName = $scope.register.registrationName;
+      jsonData.contactNumber = $scope.register.registrationContact;
+       jsonData.amountCharged = $scope.events[$scope.eventIndex].entryFee;
+       jsonData.registrationDateFormat = $scope.events[$scope.eventIndex].eventDateFormat;
+
+    $http({
+        url: 'http://52.170.201.27:8080/v1/register',
+        method: "POST",
+        data: jsonData
+    })
     .then(function(response) {
-      $scope.events =   response.data.events; 
-     
+            $scope.register.registered = true;
     }, 
     function(response) { // optional
-        //TODO:error handling   
+            $scope.error = 'Error occurred. please try again';
     });
     }
     $scope.setIds = function(eventId, index){

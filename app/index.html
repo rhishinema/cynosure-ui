@@ -37,7 +37,6 @@
        <div class="social-icons-mob">
        <a href="www.facebook.com" target="_blank" class="fa fa-facebook"></a>
        <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
-       <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
        </div>
       </ul>
         </div>
@@ -45,16 +44,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                     <li><a ng-class="{'active':home}" href="#" ng-click="home=true;live=false;events=false;products=false;gallery=false;movies=false;selected=''">Home</a></li>
-        <li><a ng-class="{'active':live}" href="#!/live" ng-click="home=false;live=true;events=false;products=false;gallery=false;movies=false;selected='Live'">Live</a></li>
-         <li><a ng-class="{'active':events}" href="#!/events" ng-click="home=false;live=false;events=true;products=false;gallery=false;movies=false;selected='Events'">Events</a></li>
-         <li><a ng-class="{'active':products}" href="#!/products" ng-click="home=false;live=false;events=false;products=true;gallery=false;movies=false;selected='Products'">Products</a></li>
-         <li><a ng-class="{'active':gallery}" href="#!/gallery" ng-click="home=false;live=false;events=false;products=false;gallery=true;movies=false;selected='Gallery'">Gallery</a></li>
+                     <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a ng-class="{'active':home}" href="#" ng-click="home=true;live=false;events=false;products=false;gallery=false;movies=false;selected=''">Home</a></li>
+        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a ng-class="{'active':live}" href="#!/live" ng-click="home=false;live=true;events=false;products=false;gallery=false;movies=false;selected='Live'">Live</a></li>
+         <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a ng-class="{'active':events}" href="#!/events" ng-click="home=false;live=false;events=true;products=false;gallery=false;movies=false;selected='Events'">Events</a></li>
+         <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a ng-class="{'active':products}" href="#!/products" ng-click="home=false;live=false;events=false;products=true;gallery=false;movies=false;selected='Products'">Products</a></li>
+         <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a ng-class="{'active':gallery}" href="#!/gallery" ng-click="home=false;live=false;events=false;products=false;gallery=true;movies=false;selected='Gallery'">Gallery</a></li>
           <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" ng-class="{'active':movies}" role="button" aria-haspopup="true" aria-expanded="false" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true">Movies <span class="caret"></span></a>
           <ul class="dropdown-menu cynosure-dropdown-menu">
-            <li><a href="#!/movies/latest" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='Latest Movies'">Latest</a></li>
-            <li><a href="#!/movies/all" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='All Movies'">All</a></li>
+            <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a href="#!/movies/latest" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='Latest Movies'">Latest</a></li>
+            <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a href="#!/movies/all" ng-click="home=false;live=false;events=false;products=false;gallery=false;movies=true;selected='All Movies'">All</a></li>
           </ul>
         </li>
             </ul>
@@ -115,9 +114,7 @@
          <li class="social-li">
         <a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a>
         </li>
-          <li class="social-li">
-       <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
-        </li>
+         
        
       </ul>
     </div><!-- /.navbar-collapse -->
