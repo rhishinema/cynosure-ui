@@ -162,7 +162,7 @@ span#basic-addon2:hover {
   transition: .5s ease;
 }
 .overlay{
-  background-color: #b79720;
+  background-color: #87d8f1;;
 }
 .event-overlay {
 background-color: #696868;
@@ -184,13 +184,16 @@ background-color: #696868;
   -ms-transform: translate(-50%, -50%);
 }
 .keyText{
-  color: #5f0707;
-  font-weight:bold;
-  font-style: italic;
+  color: #080808;
+    font-weight: bold;
+    font-style: italic;
+    /* font-family: cursive; */
+    font-variant: small-caps;
 }
 .valueText{
-  font-weight:bold;
-  color: black;
+ font-weight: bold;
+    color: black;
+    font-family: cursive;
 }
 .text1{
   top: 20%;
