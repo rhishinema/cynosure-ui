@@ -35,7 +35,7 @@ nav.navbar.navbar-cynosure {
 .cynosure-dropdown-menu>li>a {
     background-color: white;
     font-variant: small-caps;
-    width:80%;
+    width:100%;
 }
 .cynosure-body{
   background-color: black;
@@ -212,6 +212,7 @@ background-color: #696868;
 }
 .blurBg{
   background-color: rgba(0, 0, 0, 0.701961);
+  padding-bottom:2%;
 }
 body{
     background-image: url('/img/homeMain.jpg');
@@ -256,7 +257,7 @@ img.prodImg.image {
 .modal-footer.modal-footer-cynosure {
     border-top: 0;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
     #panel-cynosure-default{
       width:100%;
     }
@@ -307,6 +308,7 @@ nav.navbar.navbar-inverse.navbar-static-top.navbar-cynosure-mob {
 .cynosure-dropdown-menu>li>a {
     background-color: #696868;
 }
+
 .selected {
     color: white;
     margin-left: 20%;
@@ -314,7 +316,7 @@ nav.navbar.navbar-inverse.navbar-static-top.navbar-cynosure-mob {
     font-weight: bold;
     position: relative;
     float: left;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 .fa {
   padding: 10px;
@@ -350,7 +352,7 @@ nav.navbar.navbar-inverse.navbar-static-top.navbar-cynosure-mob {
 }
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) {
     .navbar-cynosure-mob {
    display:none;
 }

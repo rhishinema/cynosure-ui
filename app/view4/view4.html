@@ -2,7 +2,7 @@
 	<div class="col-lg-6 movieContainer" ng-repeat="movie in movies.movies track by $index">
 		<a class="prod-link">
 			<div class="col-lg-8 col-lg-push-2 prod-border container">
-				<img class="prodImg image" src="img/movies/upcoming{{$index+1}}.jpg"></img>
+				<img class="prodImg image" src="{{movie.movieBannerFullUrl}}"></img>
 				 <div class="overlay">
 					<div class="text text1">
 					<span class="keyText">Title:</span><span class="valueText"> {{movie.movieName}}</span>
