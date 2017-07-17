@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
+  "name": "cynosure",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
+  "description": "A fan page app on azure",
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "devDependencies": {
@@ -23,7 +23,7 @@
     "postupdate-deps": "bower update",
 
     "prestart": "npm install",
-    "start": "http-server -p 8003 -c-1 ./app",
+    "start": "node index.js",
 
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
